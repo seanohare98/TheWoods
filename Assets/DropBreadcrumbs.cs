@@ -29,5 +29,11 @@ public class DropBreadcrumbs : MonoBehaviour
                 ui.updateBreadText(numofBread.ToString());
             }
 		}
+
+        GameObject exit = GameObject.FindGameObjectWithTag("Exit");
+        Vector3 heading = exit.transform.position - transform.position;
+        float angle = Vector3.SignedAngle(heading, transform.forward, Vector3.up);
+        ui.rotateArrow(angle);
+        ui.updateDistanceText(heading.magnitude.ToString());
 	}
 }

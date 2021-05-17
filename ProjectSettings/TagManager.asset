@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bread
+  - Exit
+  - Pebble
+  - SearchedPebble
+  - Plane
+  - Rock
   layers:
   - Default
   - TransparentFX
