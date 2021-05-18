@@ -19,6 +19,9 @@ namespace Pathfinding {
 		IAstarAI ai;
 		
 		public Transform target;
+		public Transform playerTarget;
+		public int killPlayerDistance = 30;
+		public int searchPebbleRange = 50;
 		private GameObject[] pebbles;
 		private int pointer = 1;
 
@@ -41,22 +44,41 @@ namespace Pathfinding {
 			// if (target != null && ai != null) ai.destination = target.position;
 			if (ai != null)
 			{
-				pebbles = GameObject.FindGameObjectsWithTag("Pebble");
-				if (pebbles.Length>1) 
+				Vector3 heading = playerTarget.position - transform.position;
+				if (heading.magnitude < killPlayerDistance)		// Witch is beside the player
 				{
-					pointer = findClosestPebble(pebbles);
-	
-					Vector3 heading = pebbles[pointer].transform.position - transform.position;
-					if (heading.magnitude > 3)		// Witch is beside the closest pebble
+					target = playerTarget;
+					ai.destination = target.position;
+				}
+				else
+				{
+					pebbles = GameObject.FindGameObjectsWithTag("Pebble");
+					if (pebbles.Length>1) 
 					{
-						target = pebbles[pointer].transform;
-						ai.destination = target.position;
+						pointer = findClosestPebble(pebbles);
+		
+						heading = pebbles[pointer].transform.position - transform.position;
+						if (heading.magnitude < searchPebbleRange)		// Witch is beside the closest pebble
+						{
+							if (heading.magnitude > 3)
+							{
+								pebbles[pointer].transform.gameObject.tag = "SearchedPebble";
+							}
+							else
+							{
+								target = pebbles[pointer].transform;
+								ai.destination = target.position;
+							}
+							
+						}
+						else 
+						{
+							// TODO
+							// Random walk
+							int i =  0;
+						}
+
 					}
-					else
-					{
-						pebbles[pointer].transform.gameObject.tag = "SearchedPebble";
-					}
-					
 				}
 			}
 		}
