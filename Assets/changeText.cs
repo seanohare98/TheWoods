@@ -26,12 +26,12 @@ public class changeText : MonoBehaviour
 
     public void updateBreadText(string s) 
     {
-        breadText.text = "Bread: " + s;
+        breadText.text = s;
     }
 
     public void updateStoneText(string s) 
     {
-        stoneText.text = "Stone: " + s;
+        stoneText.text = s;
     }
 
     public void updateDistanceText(string s) 
