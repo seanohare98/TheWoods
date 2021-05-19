@@ -5315,6 +5315,9 @@ MonoBehaviour:
   target: {fileID: 0}
   playerTarget: {fileID: 185236620}
   bgm: {fileID: 926514082}
+  textContainer: {fileID: 463566917}
+  displayText: {fileID: 328927611}
+  gameOverDistance: 10
   killPlayerDistance: 10
   searchPebbleRange: 50
   moveSpeed: 3

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22479096, g: 0.25129846, b: 0.3219795, a: 1}
+  m_IndirectSpecularColor: {r: 0.22478154, g: 0.2512765, b: 0.32197466, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 7062f21d3e1934d1ea188e7fdea15cbf, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -60717,6 +60717,9 @@ MonoBehaviour:
   target: {fileID: 0}
   playerTarget: {fileID: 2015173017}
   bgm: {fileID: 1759651393}
+  textContainer: {fileID: 1407502051}
+  displayText: {fileID: 1153917990}
+  gameOverDistance: 5
   killPlayerDistance: 30
   searchPebbleRange: 50
   moveSpeed: 3
