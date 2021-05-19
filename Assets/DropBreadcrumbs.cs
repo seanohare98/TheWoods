@@ -9,6 +9,7 @@ public class DropBreadcrumbs : MonoBehaviour
 	public Transform shootPosition;
     public int numofBread = 999;
     public changeText ui;
+    public key k;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +30,32 @@ public class DropBreadcrumbs : MonoBehaviour
                 ui.updateBreadText(numofBread.ToString());
             }
 		}
-
-        GameObject exit = GameObject.FindGameObjectWithTag("Exit");
-        Vector3 heading = exit.transform.position - transform.position;
-        float angle = Vector3.SignedAngle(heading, transform.forward, Vector3.up);
-        ui.rotateArrow(angle);
-        ui.updateDistanceText(heading.magnitude.ToString());
+        if (k!=null)
+        {
+            if (!k.getKeyState())
+            {
+                GameObject exit = GameObject.FindGameObjectWithTag("Exit");
+                Vector3 heading = exit.transform.position - transform.position;
+                float angle = Vector3.SignedAngle(heading, transform.forward, Vector3.up);
+                ui.rotateArrow(angle);
+                ui.updateDistanceText(heading.magnitude.ToString());
+            }
+            else 
+            {
+                GameObject exit = GameObject.FindGameObjectWithTag("Start");
+                Vector3 heading = exit.transform.position - transform.position;
+                float angle = Vector3.SignedAngle(heading, transform.forward, Vector3.up);
+                ui.rotateArrow(angle);
+                ui.updateDistanceText(heading.magnitude.ToString());
+            }
+        }
+        else    // Tutorial stage
+        {
+            GameObject exit = GameObject.FindGameObjectWithTag("Exit");
+            Vector3 heading = exit.transform.position - transform.position;
+            float angle = Vector3.SignedAngle(heading, transform.forward, Vector3.up);
+            ui.rotateArrow(angle);
+            ui.updateDistanceText(heading.magnitude.ToString());
+        }
 	}
 }

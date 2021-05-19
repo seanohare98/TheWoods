@@ -5,6 +5,7 @@ using UnityEngine;
 public class key : MonoBehaviour
 {
     public float rotSpeed = 100f;
+    private bool tookKey = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +20,15 @@ public class key : MonoBehaviour
 
     private void OnCollisionEnter(Collision otherObj)
     {
-        Debug.Log("sdfdsfs");
         if (otherObj.transform.gameObject.tag == "MainCamera")
         {
-            Debug.Log("ssdsssssss");
             Destroy(gameObject, 0.3f);
+            tookKey = true;
         }
+    }
+
+    public bool getKeyState()
+    {
+        return tookKey;
     }
 }
