@@ -20,10 +20,25 @@ namespace Pathfinding {
 		
 		public Transform target;
 		public Transform playerTarget;
+		public changeMusic bgm;
 		public int killPlayerDistance = 30;
 		public int searchPebbleRange = 50;
+		public float moveSpeed = 300.0f;
+		public float rotSpeed = 100f;
+		
+
+
 		private GameObject[] pebbles;
 		private int pointer = 1;
+		private bool randomBegin = true;
+		private int rotLorR = 0;
+		private int rotTime = 0;
+		private int walkTime = 0;
+		private int rotWait = 0;
+		private int walkWait = 0;
+		private int timeCounter = 0;
+		private bool once = true;
+
 
 		void OnEnable () {
 			ai = GetComponent<IAstarAI>();
@@ -49,9 +64,19 @@ namespace Pathfinding {
 				{
 					target = playerTarget;
 					ai.destination = target.position;
+					if (once)
+					{
+						bgm.change2Found();
+						once = false;
+					}
 				}
 				else
 				{
+					if (!once)
+					{
+						bgm.change2Original();
+						once = true;
+					}
 					pebbles = GameObject.FindGameObjectsWithTag("Pebble");
 					if (pebbles.Length>1) 
 					{
@@ -73,11 +98,80 @@ namespace Pathfinding {
 						}
 						else 
 						{
-							// TODO
-							// Random walk
-							int i =  0;
+							// Random Walk
+							if (randomBegin)
+							{
+								rotTime = Random.Range(1,2) * 100;
+								rotWait = Random.Range(1,2) * 100 + rotTime;
+								rotLorR = Random.Range(1,2);
+								walkTime = Random.Range(1,4) * 100 + rotWait;
+								walkWait = Random.Range(1,2) * 100 + walkTime;
+								randomBegin = false;
+							}
+
+							if (rotLorR == 1 && timeCounter < rotTime)
+							{
+								transform.Rotate(transform.up * Time.deltaTime * rotSpeed);
+								timeCounter += 1;
+							}
+							else if (rotLorR == 2 && timeCounter < rotTime)
+							{
+								transform.Rotate(transform.up * Time.deltaTime * -rotSpeed);
+								timeCounter += 1;
+							}
+							else if (rotWait < timeCounter && timeCounter < walkTime)
+							{
+								transform.position += transform.forward * moveSpeed * Time.deltaTime;
+								timeCounter += 1;
+							}
+							else if (walkTime < timeCounter && timeCounter < walkWait)
+							{
+								timeCounter = 0;
+								randomBegin = true;
+							}
+							else 
+							{
+								timeCounter += 1;
+							}
+						}
+					}
+					else 
+					{
+						// Random walk
+						if (randomBegin)
+						{
+							rotTime = Random.Range(1,2) * 100;
+							rotWait = Random.Range(1,2) * 100 + rotTime;
+							rotLorR = Random.Range(1,2);
+							walkTime = Random.Range(1,4) * 100 + rotWait;
+							walkWait = Random.Range(1,2) * 100 + walkTime;
+							randomBegin = false;
 						}
 
+						if (rotLorR == 1 && timeCounter < rotTime)
+						{
+							transform.Rotate(transform.up * Time.deltaTime * rotSpeed);
+							timeCounter += 1;
+						}
+						else if (rotLorR == 2 && timeCounter < rotTime)
+						{
+							transform.Rotate(transform.up * Time.deltaTime * -rotSpeed);
+							timeCounter += 1;
+						}
+						else if (rotWait < timeCounter && timeCounter < walkTime)
+						{
+							transform.position += transform.forward * moveSpeed * Time.deltaTime;
+							timeCounter += 1;
+						}
+						else if (walkTime < timeCounter && timeCounter < walkWait)
+						{
+							timeCounter = 0;
+							randomBegin = true;
+						}
+						else 
+						{
+							timeCounter += 1;
+						}
 					}
 				}
 			}
