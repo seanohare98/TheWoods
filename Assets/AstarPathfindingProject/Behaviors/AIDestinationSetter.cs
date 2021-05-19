@@ -72,11 +72,11 @@ namespace Pathfinding {
 				}
 				else
 				{
-					if (!once)
-					{
-						bgm.change2Original();
-						once = true;
-					}
+					// if (!once)
+					// {
+					// 	bgm.change2Original();
+					// 	once = true;
+					// }
 					pebbles = GameObject.FindGameObjectsWithTag("Pebble");
 					if (pebbles.Length>1) 
 					{
@@ -85,7 +85,8 @@ namespace Pathfinding {
 						heading = pebbles[pointer].transform.position - transform.position;
 						if (heading.magnitude < searchPebbleRange)		// Witch is beside the closest pebble
 						{
-							if (heading.magnitude > 3)
+							Debug.Log("sdfsdfsd");
+							if (heading.magnitude < 3)
 							{
 								pebbles[pointer].transform.gameObject.tag = "SearchedPebble";
 							}
