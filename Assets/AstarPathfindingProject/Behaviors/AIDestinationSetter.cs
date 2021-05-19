@@ -99,7 +99,6 @@ namespace Pathfinding {
 						heading = pebbles[pointer].transform.position - transform.position;
 						if (heading.magnitude < searchPebbleRange)		// Witch is beside the closest pebble
 						{
-							Debug.Log("sdfsdfsd");
 							if (heading.magnitude < 3)
 							{
 								pebbles[pointer].transform.gameObject.tag = "SearchedPebble";
