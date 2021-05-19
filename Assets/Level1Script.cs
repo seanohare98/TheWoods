@@ -34,13 +34,13 @@ public class Level1Script : MonoBehaviour
 
  		if (dialogueOption == 1) 
  		{
- 			displayText.text = "Find the item";
+ 			displayText.text = "Find the key";
  			anim.Play("fadeIn", -1, 0f);
  		}
  		if (dialogueOption == 2)
  		{
- 			displayText.fontSize = 25;
- 			displayText.text = "And return back to the start";
+ 			displayText.fontSize = 30;
+ 			displayText.text = "And return back where you began";
  			anim.Play("fadeIn", -1, 0f);
  		}
  		else if(dialogueOption == 3)

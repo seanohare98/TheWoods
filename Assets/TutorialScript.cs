@@ -17,8 +17,7 @@ public class TutorialScript : MonoBehaviour
         dialogueOption = 0;
         displayText = GetComponent<Text>();
         anim = GetComponent<Animator>();
-        tempColor = GetComponent<Renderer>().material.color;
-        tempColor.a = 0f;
+
     }
 
     // Update is called once per frame

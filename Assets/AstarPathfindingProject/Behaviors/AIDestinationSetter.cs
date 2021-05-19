@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace Pathfinding {
 	/// <summary>
@@ -21,11 +23,14 @@ namespace Pathfinding {
 		public Transform target;
 		public Transform playerTarget;
 		public changeMusic bgm;
+		public GameObject textContainer;
+		public Text displayText;
+		Animator anim;
+		public int gameOverDistance = 10;
 		public int killPlayerDistance = 30;
 		public int searchPebbleRange = 50;
 		public float moveSpeed = 300.0f;
 		public float rotSpeed = 100f;
-		
 
 
 		private GameObject[] pebbles;
@@ -38,7 +43,10 @@ namespace Pathfinding {
 		private int walkWait = 0;
 		private int timeCounter = 0;
 		private bool once = true;
-
+		private int failSafe = 0;
+		void Start () {
+			anim = displayText.GetComponent<Animator>();
+		}
 
 		void OnEnable () {
 			ai = GetComponent<IAstarAI>();
@@ -60,7 +68,13 @@ namespace Pathfinding {
 			if (ai != null)
 			{
 				Vector3 heading = playerTarget.position - transform.position;
-				if (heading.magnitude < killPlayerDistance)		// Witch is beside the player
+				if (heading.magnitude < gameOverDistance && failSafe == 0)
+				{
+					failSafe = 1;
+					// Print Game Over Text and return to Main Menu
+					StartCoroutine(PrintGameOver());
+				}
+				else if (heading.magnitude < killPlayerDistance)		// Witch is beside the player
 				{
 					target = playerTarget;
 					ai.destination = target.position;
@@ -85,7 +99,6 @@ namespace Pathfinding {
 						heading = pebbles[pointer].transform.position - transform.position;
 						if (heading.magnitude < searchPebbleRange)		// Witch is beside the closest pebble
 						{
-							Debug.Log("sdfsdfsd");
 							if (heading.magnitude < 3)
 							{
 								pebbles[pointer].transform.gameObject.tag = "SearchedPebble";
@@ -193,6 +206,17 @@ namespace Pathfinding {
 				}
 			}
 			return idx;
+		}
+
+		IEnumerator PrintGameOver ()
+		{
+			displayText.fontSize = 40;
+			displayText.text = "GAME OVER!";
+			textContainer.SetActive(true);
+			anim.Play("fadeIn", -1, 0f);
+			yield return new WaitForSeconds(4f);
+			SceneManager.LoadScene(0);
+
 		}
 	}
 }
