@@ -1945,7 +1945,7 @@ RectTransform:
   m_Children:
   - {fileID: 1266526256}
   m_Father: {fileID: 1473897306}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2670,7 +2670,7 @@ GameObject:
   - component: {fileID: 632484726}
   m_Layer: 0
   m_Name: New Text
-  m_TagString: Exit
+  m_TagString: Start
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4445,7 +4445,7 @@ RectTransform:
   - {fileID: 1471823432}
   - {fileID: 1553061780}
   m_Father: {fileID: 1473897306}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5528,7 +5528,6 @@ RectTransform:
   - {fileID: 1659497844}
   - {fileID: 523044765}
   - {fileID: 525130308}
-  - {fileID: 1188350372}
   - {fileID: 463566918}
   - {fileID: 1188350372}
   m_Father: {fileID: 0}

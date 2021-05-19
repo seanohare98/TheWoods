@@ -40,18 +40,10 @@ public class DropBreadcrumbs : MonoBehaviour
                 ui.rotateArrow(angle);
                 ui.updateDistanceText(heading.magnitude.ToString());
             }
-            else 
-            {
-                GameObject exit = GameObject.FindGameObjectWithTag("Start");
-                Vector3 heading = exit.transform.position - transform.position;
-                float angle = Vector3.SignedAngle(heading, transform.forward, Vector3.up);
-                ui.rotateArrow(angle);
-                ui.updateDistanceText(heading.magnitude.ToString());
-            }
         }
-        else    // Tutorial stage
+        else
         {
-            GameObject exit = GameObject.FindGameObjectWithTag("Exit");
+            GameObject exit = GameObject.FindGameObjectWithTag("Start");
             Vector3 heading = exit.transform.position - transform.position;
             float angle = Vector3.SignedAngle(heading, transform.forward, Vector3.up);
             ui.rotateArrow(angle);
