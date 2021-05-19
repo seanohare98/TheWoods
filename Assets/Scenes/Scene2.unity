@@ -9795,9 +9795,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4097195505043946274, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_Convex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4097195505043946274, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
 --- !u!1 &184618161
 GameObject:
@@ -21255,6 +21256,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpeed: 100
+--- !u!65 &403659732
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403659730}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12193206, y: 0.0391059, z: 0.23262404}
+  m_Center: {x: -1.8041124e-16, y: -9.313226e-10, z: 0.0000000037252899}
 --- !u!54 &403659736
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34693,6 +34707,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e334e6614ad50f749b0a37528784c614, type: 3}
+--- !u!1 &652114939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 652114940}
+  m_Layer: 0
+  m_Name: Start indicator
+  m_TagString: Start
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &652114940
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652114939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 44.44, y: 0, z: -57.17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 610
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &652603929
 GameObject:
   m_ObjectHideFlags: 0
@@ -41593,8 +41637,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Bread
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -42799,7 +42843,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
+<<<<<<< HEAD
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+=======
+    m_Font: {fileID: 12800000, guid: 8b2bca46d3ba94f9a8d0f285ca29ab79, type: 3}
+>>>>>>> 70233b415ce01f84da2f79d868f913fdcce37286
     m_FontSize: 54
     m_FontStyle: 1
     m_BestFit: 0
@@ -61214,9 +61262,9 @@ MonoBehaviour:
   bgm: {fileID: 1759651393}
   textContainer: {fileID: 1407502051}
   displayText: {fileID: 1153917990}
-  gameOverDistance: 5
-  killPlayerDistance: 30
-  searchPebbleRange: 50
+  gameOverDistance: 2
+  killPlayerDistance: 25
+  searchPebbleRange: 40
   moveSpeed: 3
   rotSpeed: 100
 --- !u!114 &1177410733
@@ -61294,8 +61342,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5044126, y: 2.0107627, z: 0.37237805}
-  m_Center: {x: 0.03998681, y: 1.0054624, z: -0.020549774}
+  m_Size: {x: 0.06489786, y: 2.0107627, z: 0.04000939}
+  m_Center: {x: 0.01884222, y: 1.0054624, z: 0.0084432615}
 --- !u!54 &1177410736
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -69161,8 +69209,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Distance
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -71808,8 +71856,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Stone
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -75752,7 +75800,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
+<<<<<<< HEAD
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+=======
+    m_Font: {fileID: 12800000, guid: 8b2bca46d3ba94f9a8d0f285ca29ab79, type: 3}
+>>>>>>> 70233b415ce01f84da2f79d868f913fdcce37286
     m_FontSize: 54
     m_FontStyle: 1
     m_BestFit: 0
@@ -86731,7 +86783,11 @@ RectTransform:
   - {fileID: 311198047}
   - {fileID: 743712272}
   m_Father: {fileID: 377078647}
+<<<<<<< HEAD
   m_RootOrder: 5
+=======
+  m_RootOrder: 7
+>>>>>>> 70233b415ce01f84da2f79d868f913fdcce37286
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -98292,7 +98348,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
+<<<<<<< HEAD
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+=======
+    m_Font: {fileID: 12800000, guid: 8b2bca46d3ba94f9a8d0f285ca29ab79, type: 3}
+>>>>>>> 70233b415ce01f84da2f79d868f913fdcce37286
     m_FontSize: 54
     m_FontStyle: 1
     m_BestFit: 0
@@ -106952,6 +107012,7 @@ MonoBehaviour:
   shootPosition: {fileID: 1482703916}
   numofBread: 99
   ui: {fileID: 377078648}
+  k: {fileID: 403659731}
 --- !u!114 &2015173015
 MonoBehaviour:
   m_ObjectHideFlags: 0

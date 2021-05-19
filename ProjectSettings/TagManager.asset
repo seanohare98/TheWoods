@@ -10,6 +10,8 @@ TagManager:
   - SearchedPebble
   - Plane
   - Rock
+  - Fire
+  - Start
   layers:
   - Default
   - TransparentFX
