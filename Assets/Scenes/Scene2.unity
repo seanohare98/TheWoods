@@ -61424,11 +61424,12 @@ MonoBehaviour:
   bgm: {fileID: 1759651393}
   textContainer: {fileID: 1407502051}
   displayText: {fileID: 1153917990}
+  k: {fileID: 403659731}
   gameOverDistance: 2
-  killPlayerDistance: 25
-  searchPebbleRange: 40
-  moveSpeed: 3
-  rotSpeed: 100
+  killPlayerDistance: 20
+  searchPebbleRange: 35
+  moveSpeed: 2
+  rotSpeed: 60
 --- !u!114 &1177410733
 MonoBehaviour:
   m_ObjectHideFlags: 0
