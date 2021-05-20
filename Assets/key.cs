@@ -22,7 +22,7 @@ public class key : MonoBehaviour
     {
         if (otherObj.tag == "MainCamera")
         {
-            Destroy(gameObject, 0.3f);
+            Destroy(gameObject);
             tookKey = true;
         }
     }
