@@ -18,9 +18,9 @@ public class key : MonoBehaviour
         transform.Rotate(0f,0f,Time.deltaTime * rotSpeed, Space.Self);
     }
 
-    private void OnCollisionEnter(Collision otherObj)
+    private void OnTriggerEnter(Collider otherObj)
     {
-        if (otherObj.transform.gameObject.tag == "MainCamera")
+        if (otherObj.tag == "MainCamera")
         {
             Destroy(gameObject, 0.3f);
             tookKey = true;
