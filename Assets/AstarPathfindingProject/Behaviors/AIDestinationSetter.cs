@@ -26,6 +26,7 @@ namespace Pathfinding {
 		public GameObject textContainer;
 		public Text displayText;
 		Animator anim;
+		public key k;
 		public int gameOverDistance = 10;
 		public int killPlayerDistance = 30;
 		public int searchPebbleRange = 50;
@@ -65,7 +66,7 @@ namespace Pathfinding {
 
 		void Update () {
 			// if (target != null && ai != null) ai.destination = target.position;
-			if (ai != null)
+			if (ai != null && k.getKeyState() == true)
 			{
 				Vector3 heading = playerTarget.position - transform.position;
 				if (heading.magnitude < gameOverDistance && failSafe == 0)
@@ -86,11 +87,11 @@ namespace Pathfinding {
 				}
 				else
 				{
-					// if (!once)
-					// {
-					// 	bgm.change2Original();
-					// 	once = true;
-					// }
+					if (!once)
+					{
+						bgm.change2Original();
+						once = true;
+					}
 					pebbles = GameObject.FindGameObjectsWithTag("Pebble");
 					if (pebbles.Length>1) 
 					{

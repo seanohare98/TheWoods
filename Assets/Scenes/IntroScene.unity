@@ -6018,6 +6018,7 @@ MonoBehaviour:
   bgm: {fileID: 926514082}
   textContainer: {fileID: 463566917}
   displayText: {fileID: 328927611}
+  k: {fileID: 1221778196}
   gameOverDistance: 0
   killPlayerDistance: 10
   searchPebbleRange: 50
