@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
+    public FirstPersonController player;
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +29,19 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
         if (gameIsPaused)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            player.GetComponent<FirstPersonController>().enabled = false;
+            player.GetComponent<Flashlight>().enabled = false;
+        } else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            player.GetComponent<FirstPersonController>().enabled = true;
+            player.GetComponent<Flashlight>().enabled = true;
         }
     }
 
