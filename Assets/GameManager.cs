@@ -6,24 +6,28 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 	public GameObject spawnRabbit;
-	public Transform[] spawnPt;
-	public int numRabbits = 2;
+	public float timeToSpawn = 20.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-	 StartCoroutine(spawnRabbits());  
+	 	StartCoroutine(spawnRabbits());  
     }
 
     IEnumerator spawnRabbits()
     {
-    	int pt;
-    	for (int i = 0; i < numRabbits; i++)
-    	{
-    		pt = (int)Random.Range(0.0f, 2.99f);
-    		var instanceRabbit = Instantiate(spawnRabbit, spawnPt[pt].position, spawnPt[pt].rotation);
-    		yield return new WaitForSeconds(0.5f);
-    	
-    	}
+    	float pt;
+		int side;
+		while(true)
+		{
+			pt = Random.Range(0f, 53f);
+			side = Random.Range(0,2);
+			if (side == 1)
+			{
+				pt *= 1;
+			}
+			var instanceRabbit = Instantiate(spawnRabbit, new Vector3( 53f, 0f, pt), spawnRabbit.transform.rotation);
+    		yield return new WaitForSeconds(timeToSpawn);
+		}
     }
 }

@@ -57,17 +57,23 @@ public class TutorialScript : MonoBehaviour
  		}
  		else if (dialogueOption == 5)
  		{
+	 		displayText.text = "Press Shift to run";	
+ 			anim.Play("fadeIn", -1, 0f);
+
+ 		}
+		else if (dialogueOption == 6)
+ 		{
 	 		displayText.text = "Left-Click to toggle your flashlight";	
  			anim.Play("fadeIn", -1, 0f);
 
  		}
- 		else if (dialogueOption == 6)
+ 		else if (dialogueOption == 7)
  		{
 	 		displayText.text = "Good Luck";	
  			anim.Play("fadeIn", -1, 0f);
 
  		}
- 		else if(dialogueOption == 7)
+ 		else if(dialogueOption == 8)
  		{
  			textContainer.SetActive(false);
  		}
