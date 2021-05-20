@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
 	public GameObject spawnRabbit;
 	public float timeToSpawn = 20.0f;
+	public float y = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
 			{
 				pt *= 1;
 			}
-			var instanceRabbit = Instantiate(spawnRabbit, new Vector3( 53f, 0f, pt), spawnRabbit.transform.rotation);
+			var instanceRabbit = Instantiate(spawnRabbit, new Vector3( 53f, y, pt), spawnRabbit.transform.rotation);
     		yield return new WaitForSeconds(timeToSpawn);
 		}
     }
