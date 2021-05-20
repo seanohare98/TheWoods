@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -26,6 +27,11 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
+        }
+        if (gameIsPaused)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
