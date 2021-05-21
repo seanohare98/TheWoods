@@ -6,7 +6,8 @@ public class changeVolume : MonoBehaviour
 {
     public AudioSource k;
 
-    private float volume = 1.0f;
+    static private float bgmVolume = 1.0f;
+    static private float gameVolume = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,16 +17,21 @@ public class changeVolume : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        k.volume = volume;
+        k.volume = bgmVolume;        
     }
 
-    public void changeVol(float v)
+    public void changeBgmVol(float v)
     {
-        volume = v;
+        bgmVolume = v;
     }
 
-    public float getVol()
+    public void changeSEVol(float v)
     {
-        return volume;
+        gameVolume = v;
+    }
+
+    public float getSEVol()
+    {
+        return gameVolume;
     }
 }

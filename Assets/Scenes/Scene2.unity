@@ -51888,6 +51888,10 @@ PrefabInstance:
       value: 1.0003238
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: cV
+      value: 
+      objectReference: {fileID: 1759651391}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_JumpSound
       value: 
       objectReference: {fileID: 8300000, guid: c025c43d1749af5469c7dd8af13e162f, type: 3}
@@ -60030,6 +60034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pebbleFallSound: {fileID: 8300000, guid: fdfa07727ba18e146b0d737f16110ba5, type: 3}
   pebbleFallRockSound: {fileID: 8300000, guid: 5a9383dda6cabc047b7a297602e93eb4, type: 3}
+  cV: {fileID: 1759651391}
 --- !u!82 &1144772610
 AudioSource:
   m_ObjectHideFlags: 0
@@ -68425,6 +68430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e5bb5b3081347f99430d9ac500485b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cV: {fileID: 1759651391}
 --- !u!82 &1308708279
 AudioSource:
   m_ObjectHideFlags: 0
@@ -92979,6 +92985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1759651392}
   - component: {fileID: 1759651393}
+  - component: {fileID: 1759651391}
   m_Layer: 0
   m_Name: bgm
   m_TagString: Untagged
@@ -92986,6 +92993,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1759651391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759651390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f030526d3fee49e1a816e1303b4af04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  k: {fileID: 1016773582}
 --- !u!4 &1759651392
 Transform:
   m_ObjectHideFlags: 0
