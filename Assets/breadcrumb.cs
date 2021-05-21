@@ -5,9 +5,10 @@ using UnityEngine;
 public class breadcrumb : MonoBehaviour
 {
     // Start is called before the first frame update
+    public changeVolume cV; 
     void Start()
     {
-        
+        GetComponent<AudioSource>().volume = cV.getSEVol();
     }
 
     // Update is called once per frame
@@ -21,7 +22,7 @@ public class breadcrumb : MonoBehaviour
         if (otherObj.transform.gameObject.tag == "Plane")
         {
             GetComponent<AudioSource>().Play();
-            Debug.Log("hit");
+            // Debug.Log("hit");
         }
     }
 }

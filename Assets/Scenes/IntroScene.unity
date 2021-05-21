@@ -268,6 +268,10 @@ PrefabInstance:
       value: 1.0003238
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: cV
+      value: 
+      objectReference: {fileID: 926514084}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_JumpSound
       value: 
       objectReference: {fileID: 8300000, guid: c025c43d1749af5469c7dd8af13e162f, type: 3}
@@ -6668,6 +6672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pebbleFallSound: {fileID: 8300000, guid: fdfa07727ba18e146b0d737f16110ba5, type: 3}
   pebbleFallRockSound: {fileID: 8300000, guid: 5a9383dda6cabc047b7a297602e93eb4, type: 3}
+  cV: {fileID: 926514084}
 --- !u!114 &779236316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8133,6 +8138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 926514083}
   - component: {fileID: 926514082}
+  - component: {fileID: 926514084}
   m_Layer: 0
   m_Name: bgm
   m_TagString: Untagged
@@ -8169,6 +8175,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 69
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &926514084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926514081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f030526d3fee49e1a816e1303b4af04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  k: {fileID: 1486985092}
 --- !u!1001 &929294105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10729,6 +10748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e5bb5b3081347f99430d9ac500485b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cV: {fileID: 926514084}
 --- !u!82 &1223334146
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16477,6 +16497,14 @@ PrefabInstance:
     - target: {fileID: 4983459625728690, guid: 5fba1b0c27ab5fe4888bf051c5438a80, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224379256121814350, guid: 5fba1b0c27ab5fe4888bf051c5438a80, type: 3}
+      propertyPath: m_Size.x
+      value: 2.7999177
+      objectReference: {fileID: 0}
+    - target: {fileID: 224379256121814350, guid: 5fba1b0c27ab5fe4888bf051c5438a80, type: 3}
+      propertyPath: m_Center.x
+      value: 1.3211147
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fba1b0c27ab5fe4888bf051c5438a80, type: 3}
