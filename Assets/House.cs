@@ -25,7 +25,14 @@ public class House : MonoBehaviour
         {
             if (levelKey.getKeyState() == true)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                if (SceneManager.GetActiveScene().buildIndex == 4)
+                {
+                    SceneManager.LoadScene(0);
+                }
+                else 
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
             }
         }
     }
